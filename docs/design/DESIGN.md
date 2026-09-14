@@ -74,6 +74,16 @@ and project guidelines in `AGENTS.md` and `docs/context/`.
 - Solid circular indicator pin positioned dynamically at the detector score.
 - *Strict Rule*: No circular gauges or odometer dials.
 
+### Frequency Explorer (Interactive Spectrum)
+- Title: *Frequency Explorer*
+- Description: *Inspect the frequency-domain representation used by MaskSim during classification.*
+- Channel Selector: Accessible tabs for `Combined`, `Y`, `Cb`, `Cr`.
+- Zoom Controls: Step zoom in/out (1x to 8x), fit-to-view / reset button, and mouse wheel zoom.
+- Pan Support: Drag-to-pan enabled when zoomed beyond 1x with boundary clamping.
+- Hover Inspector: Dynamic cursor-to-frequency coordinate mapping ($u \in [-256, 256]$, $v \in [-256, 256]$) with optional per-pixel metrics (magnitude, mask weight, reference value) displayed strictly when provided by backend.
+- Fullscreen Mode: Dedicated modal overlay with escape key dismissal, maintaining active channel and zoom state.
+- Mock Mode State: Displays clean informational notice (*"Frequency data is not available in mock mode."*) with controls appropriately disabled.
+
 ### Scientific Visualization Viewer
 - Viewport with coordinate axes: Frequency $u$ (vertical: +256 to -256) and Frequency $v$ (horizontal: -256 to +256).
 - Central DC $(0,0)$ reticle marker.

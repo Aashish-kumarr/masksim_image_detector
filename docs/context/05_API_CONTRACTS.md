@@ -52,6 +52,26 @@ includeExplainability optional boolean-like string
       "maskCombined": "data:image/png;base64,...",
       "maskedSpectrum": "data:image/png;base64,...",
       "referenceSpectrum": "data:image/png;base64,..."
+    },
+    "frequencyExplorer": {
+      "available": true,
+      "images": {
+        "combined": "data:image/png;base64,...",
+        "y": "data:image/png;base64,...",
+        "cb": "data:image/png;base64,...",
+        "cr": "data:image/png;base64,..."
+      },
+      "metadata": {
+        "width": 512,
+        "height": 512,
+        "representation": "log-magnitude",
+        "transform": "2D FFT",
+        "shift": "centered",
+        "source": "DnCNN residual"
+      },
+      "pointData": {
+        "available": false
+      }
     }
   },
   "meta": {

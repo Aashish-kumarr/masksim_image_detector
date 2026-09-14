@@ -37,6 +37,29 @@ export class MockMlAdapter {
           ? "Mock mode does not generate forensic tensor artifacts."
           : "Explainability not requested.",
       },
+      frequencyExplorer: {
+        available: false,
+        note: includeExplainability
+          ? "Frequency data is not available in mock mode."
+          : "Explainability not requested.",
+        images: {
+          combined: null,
+          y: null,
+          cb: null,
+          cr: null,
+        },
+        metadata: {
+          width: 512,
+          height: 512,
+          representation: "log-magnitude",
+          transform: "2D FFT",
+          shift: "centered",
+          source: "DnCNN residual",
+        },
+        pointData: {
+          available: false,
+        },
+      },
       internal: {
         mode: "mock",
         requestId,

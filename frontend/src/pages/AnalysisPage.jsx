@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import PageHeader from "../components/common/PageHeader";
 import ResultSummary from "../components/detector/ResultSummary";
-import ScientificVisualizationViewer from "../components/forensic/ScientificVisualizationViewer";
+import FrequencyExplorer from "../components/forensic/FrequencyExplorer";
 import ForensicTabs from "../components/forensic/ForensicTabs";
 import { getDetection } from "../services/detectionApi";
 import { ChevronRight, ArrowLeft, Loader2, AlertCircle } from "lucide-react";
@@ -120,40 +120,12 @@ export default function AnalysisPage() {
         previewUrl=""
       />
 
-      {/* Section 2: Frequency Analysis Suite */}
-      <div className="card">
-        <div style={{ marginBottom: "20px" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-            <h2 style={{ fontSize: "20px", fontWeight: 700, color: "var(--text-primary)" }}>
-              Frequency analysis
-            </h2>
-            <span className="navbar-badge" style={{ color: "var(--accent-blue)" }}>
-              Spectral Residual
-            </span>
-          </div>
-          <p style={{ fontSize: "14px", color: "var(--text-secondary)", marginTop: "4px" }}>
-            The spectrum below represents the frequency-domain signal extracted from the DnCNN residual and analyzed by MaskSim.
-          </p>
-        </div>
-
-        <ScientificVisualizationViewer
-          title="2D FFT Shifted Log-Magnitude Spectrum"
-          subtitle="Figure 1.1: Normalized 2D Fast Fourier Transform shifted spectrum of the DnCNN noise residual."
-          available={Boolean(result.explainability?.available)}
-          images={{
-            combined: result.explainability?.spectrumCombined,
-            y: result.explainability?.spectrumY,
-            cb: result.explainability?.spectrumCb,
-            cr: result.explainability?.spectrumCr,
-          }}
-          note={result.explainability?.note}
-          source="DnCNN residual"
-          transform="2D-RFFT Centered Shifted"
-          representation="log(1 + |F(u, v)|)"
-          resolution="512 × 512 px"
-          sidebarTitle="Spectrum Details"
-        />
-      </div>
+      {/* Section 2: Interactive Frequency Explorer */}
+      <FrequencyExplorer
+        frequencyExplorer={result.frequencyExplorer}
+        explainability={result.explainability}
+        result={result}
+      />
 
       {/* Section 3: Forensic Tabs Suite */}
       <ForensicTabs
