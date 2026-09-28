@@ -1,0 +1,23 @@
+{
+    "generator_id": "stable-diffusion-1-4",
+    "display_name": "sd14",
+    "real_dir": "data/raise_processed",
+    "fake_dir": "data/synthbuster/synthbuster/stable-diffusion-1-4",
+    "split_file": "data/splits.json",
+    "pretrained_dncnn": "pretrained/dncnn_color_blind.pth",
+    "checkpoint_dir": "checkpoints/stable-diffusion-1-4",
+    "log_dir": "logs/stable-diffusion-1-4",
+    "output_dir": "outputs/stable-diffusion-1-4",
+    "input_size": 512,
+    "epochs": 10,
+    "batch_size": 4,
+    "accumulation_steps": 2,
+    "dncnn_lr": 0.0001,
+    "masksim_lr": 0.001,
+    "scheduler_gamma": 0.99,
+    "jpeg_quality_min": 65,
+    "jpeg_quality_max": 100,
+    "seed": 42,
+    "num_workers": 0,
+    "threshold": 0.5
+}

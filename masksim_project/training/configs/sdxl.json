@@ -1,0 +1,23 @@
+{
+    "generator_id": "stable-diffusion-xl",
+    "display_name": "sdxl",
+    "real_dir": "data/raise_processed",
+    "fake_dir": "data/synthbuster/synthbuster/stable-diffusion-xl",
+    "split_file": "data/splits.json",
+    "pretrained_dncnn": "pretrained/dncnn_color_blind.pth",
+    "checkpoint_dir": "checkpoints/stable-diffusion-xl",
+    "log_dir": "logs/stable-diffusion-xl",
+    "output_dir": "outputs/stable-diffusion-xl",
+    "input_size": 512,
+    "epochs": 10,
+    "batch_size": 4,
+    "accumulation_steps": 2,
+    "dncnn_lr": 0.0001,
+    "masksim_lr": 0.001,
+    "scheduler_gamma": 0.99,
+    "jpeg_quality_min": 65,
+    "jpeg_quality_max": 100,
+    "seed": 42,
+    "num_workers": 0,
+    "threshold": 0.5
+}

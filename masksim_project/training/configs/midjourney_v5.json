@@ -1,0 +1,23 @@
+{
+    "generator_id": "midjourney-v5",
+    "display_name": "midjourney_v5",
+    "real_dir": "data/raise_processed",
+    "fake_dir": "data/synthbuster/synthbuster/midjourney-v5",
+    "split_file": "data/splits.json",
+    "pretrained_dncnn": "pretrained/dncnn_color_blind.pth",
+    "checkpoint_dir": "checkpoints/midjourney-v5",
+    "log_dir": "logs/midjourney-v5",
+    "output_dir": "outputs/midjourney-v5",
+    "input_size": 512,
+    "epochs": 10,
+    "batch_size": 4,
+    "accumulation_steps": 2,
+    "dncnn_lr": 0.0001,
+    "masksim_lr": 0.001,
+    "scheduler_gamma": 0.99,
+    "jpeg_quality_min": 65,
+    "jpeg_quality_max": 100,
+    "seed": 42,
+    "num_workers": 0,
+    "threshold": 0.5
+}

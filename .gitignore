@@ -51,3 +51,34 @@ tmp/
 temp/
 uploads/
 test_sample.png
+
+# ============================================================
+# masksim_project — Training Artifacts
+# Source code (training/*.py, configs/*.json) IS tracked.
+# Large data files, checkpoints, outputs are NOT tracked.
+# ============================================================
+
+# Raw data (large image folders)
+masksim_project/data/raise_processed/
+masksim_project/data/synthbuster/
+masksim_project/data/val2017/
+masksim_project/data/*.zip
+masksim_project/data/*.csv
+
+# Training checkpoints (except legacy best)
+masksim_project/checkpoints/*/latest.pt
+masksim_project/checkpoints/*/best.pt
+# Allow the original SD1.4 checkpoint to be tracked if desired:
+# !masksim_project/checkpoints/masksim_sd14_best.pt
+
+# Training logs
+masksim_project/logs/
+
+# Evaluation outputs
+masksim_project/outputs/
+
+# Scratch / temp
+masksim_project/dsp_01.py
+temp_inspect.py
+temp_inspection.json
+dsp_01.py
