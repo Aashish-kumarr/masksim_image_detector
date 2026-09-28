@@ -1,12 +1,21 @@
 {
   "version": "1.0",
   "lastUpdated": "2026-09-28",
-  "description": "MaskSim generator-specific deepfake detector registry. Contains training/evaluation metadata only — no model weights.",
+  "description": "MaskSim generator-specific deepfake detector registry. Contains training/evaluation metadata only \u00e2\u20ac\u201d no model weights.",
   "splitConfig": {
     "splitFile": "masksim_project/data/splits.json",
-    "train": {"real": 691, "fake": 691},
-    "val":   {"real": 148, "fake": 148},
-    "test":  {"real": 148, "fake": 148},
+    "train": {
+      "real": 691,
+      "fake": 691
+    },
+    "val": {
+      "real": 148,
+      "fake": 148
+    },
+    "test": {
+      "real": 148,
+      "fake": 148
+    },
     "realDataset": "RAISE-1K (center-cropped 1024x1024 PNG)",
     "fakeDataset": "Synthbuster"
   },
@@ -16,8 +25,8 @@
     "accumulationSteps": 2,
     "effectiveBatch": 8,
     "optimizer": "Adam",
-    "dncnnLr": 1e-4,
-    "masksimLr": 1e-3,
+    "dncnnLr": 0.0001,
+    "masksimLr": 0.001,
     "schedulerGamma": 0.99,
     "scheduler": "ExponentialLR",
     "seed": 42,
@@ -36,13 +45,13 @@
       "valLoss": 0.3782,
       "valAuc": 0.9754,
       "testLoss": null,
-      "testAuc": 0.9825,
-      "accuracy": 0.9189,
+      "testAuc": null,
+      "accuracy": null,
       "precision": null,
       "recall": null,
       "f1": null,
       "confusionMatrix": null,
-      "notes": "Legacy checkpoint (masksim_sd14_best.pt). Test AUC/accuracy from original notebook run. Test set re-evaluation not yet run.",
+      "notes": "Legacy checkpoint (masksim_sd14_best.pt). Test evaluation output (outputs/stable-diffusion-1-4/test_metrics.json) is not present on disk, so test metrics are null per verification rules.",
       "deploymentFilename": "masksim_sd14_deploy.pt"
     },
     {
@@ -56,11 +65,20 @@
       "valAuc": 0.9655,
       "testLoss": 0.4296,
       "testAuc": 0.9837,
-      "accuracy": 0.9020,
+      "accuracy": 0.902,
       "precision": 0.8521,
-      "recall": 0.9730,
+      "recall": 0.973,
       "f1": 0.9085,
-      "confusionMatrix": [[123, 25], [4, 144]],
+      "confusionMatrix": [
+        [
+          123,
+          25
+        ],
+        [
+          4,
+          144
+        ]
+      ],
       "deploymentFilename": "masksim_sd13_deploy.pt"
     },
     {
@@ -70,15 +88,24 @@
       "epochsCompleted": 10,
       "bestEpoch": 10,
       "threshold": 0.5,
-      "valLoss": 0.4530,
+      "valLoss": 0.453,
       "valAuc": 0.9607,
       "testLoss": 0.4359,
       "testAuc": 0.9718,
       "accuracy": 0.9054,
       "precision": 0.8571,
-      "recall": 0.9730,
+      "recall": 0.973,
       "f1": 0.9114,
-      "confusionMatrix": [[124, 24], [4, 144]],
+      "confusionMatrix": [
+        [
+          124,
+          24
+        ],
+        [
+          4,
+          144
+        ]
+      ],
       "deploymentFilename": "masksim_sd2_deploy.pt"
     },
     {
@@ -96,25 +123,43 @@
       "precision": 0.9038,
       "recall": 0.9527,
       "f1": 0.9276,
-      "confusionMatrix": [[133, 15], [7, 141]],
+      "confusionMatrix": [
+        [
+          133,
+          15
+        ],
+        [
+          7,
+          141
+        ]
+      ],
       "deploymentFilename": "masksim_sdxl_deploy.pt"
     },
     {
       "id": "dalle2",
       "displayName": "DALL-E 2",
       "trainingStatus": "complete",
-      "epochsCompleted": 9,
+      "epochsCompleted": 10,
       "bestEpoch": 9,
       "threshold": 0.5,
       "valLoss": 0.4568,
       "valAuc": 0.9674,
       "testLoss": 0.4398,
-      "testAuc": 0.9860,
+      "testAuc": 0.986,
       "accuracy": 0.9459,
       "precision": 0.9648,
       "recall": 0.9257,
       "f1": 0.9448,
-      "confusionMatrix": [[143, 5], [11, 137]],
+      "confusionMatrix": [
+        [
+          143,
+          5
+        ],
+        [
+          11,
+          137
+        ]
+      ],
       "deploymentFilename": "masksim_dalle2_deploy.pt"
     },
     {
@@ -124,7 +169,7 @@
       "epochsCompleted": 10,
       "bestEpoch": 10,
       "threshold": 0.5,
-      "valLoss": 0.3910,
+      "valLoss": 0.391,
       "valAuc": 0.9709,
       "testLoss": 0.3811,
       "testAuc": 0.9804,
@@ -132,25 +177,43 @@
       "precision": 0.9556,
       "recall": 0.8716,
       "f1": 0.9117,
-      "confusionMatrix": [[142, 6], [19, 129]],
+      "confusionMatrix": [
+        [
+          142,
+          6
+        ],
+        [
+          19,
+          129
+        ]
+      ],
       "deploymentFilename": "masksim_dalle3_deploy.pt"
     },
     {
       "id": "midjourney-v5",
       "displayName": "Midjourney v5",
       "trainingStatus": "complete",
-      "epochsCompleted": 9,
+      "epochsCompleted": 10,
       "bestEpoch": 9,
       "threshold": 0.5,
       "valLoss": 0.4459,
-      "valAuc": 0.9610,
-      "testLoss": 0.4390,
+      "valAuc": 0.961,
+      "testLoss": 0.439,
       "testAuc": 0.9631,
       "accuracy": 0.8784,
       "precision": 0.8333,
       "recall": 0.9459,
       "f1": 0.8861,
-      "confusionMatrix": [[120, 28], [8, 140]],
+      "confusionMatrix": [
+        [
+          120,
+          28
+        ],
+        [
+          8,
+          140
+        ]
+      ],
       "deploymentFilename": "masksim_midjourney_v5_deploy.pt"
     },
     {
@@ -168,7 +231,16 @@
       "precision": 0.8553,
       "recall": 0.8784,
       "f1": 0.8667,
-      "confusionMatrix": [[126, 22], [18, 130]],
+      "confusionMatrix": [
+        [
+          126,
+          22
+        ],
+        [
+          18,
+          130
+        ]
+      ],
       "deploymentFilename": "masksim_firefly_deploy.pt"
     },
     {
@@ -186,8 +258,22 @@
       "precision": 0.8011,
       "recall": 0.9797,
       "f1": 0.8815,
-      "confusionMatrix": [[112, 36], [3, 145]],
+      "confusionMatrix": [
+        [
+          112,
+          36
+        ],
+        [
+          3,
+          145
+        ]
+      ],
       "deploymentFilename": "masksim_glide_deploy.pt"
     }
-  ]
+  ],
+  "architectureSummary": {
+    "dncnn": "20-layer Conv2d(bias=True) + ReLU (no BatchNorm in DnCNN)",
+    "masksim": "Conv2d(c,c,1) + learnable spatial mask + BatchNorm2d + learnable reference template",
+    "trainingLoss": "Binary Cross-Entropy (BCE) applied to training-adjusted similarity: signed similarity for fake (label=1), abs(similarity) for real (label=0), followed by sigmoid(exp(a)*sim_adj + b)."
+  }
 }
